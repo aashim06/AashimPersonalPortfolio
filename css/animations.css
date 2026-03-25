@@ -1,0 +1,54 @@
+/* ==========================================================================
+   Animations & Transitions - Cinematic Apple Smooth
+   ========================================================================== */
+
+/* Enhanced Reveal Up (Apple Product Style: Blur + Scale + Translate) */
+.reveal-up {
+    opacity: 0;
+    transform: translateY(40px) scale(0.98);
+    filter: blur(8px);
+    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+                filter 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform, filter;
+}
+
+.reveal-up.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+}
+
+/* Stagger Effects */
+.stagger-1 { transition-delay: 100ms; }
+.stagger-2 { transition-delay: 200ms; }
+.stagger-3 { transition-delay: 300ms; }
+
+/* Hidden Reveal (Opacity + Slight Blur) */
+.hidden-reveal {
+    opacity: 0;
+    filter: blur(10px);
+    transition: opacity 1.5s cubic-bezier(0.16, 1, 0.3, 1), 
+                filter 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hidden-reveal.visible {
+    opacity: 1;
+    filter: blur(0);
+}
+
+/* Image/Visual Reveal */
+.reveal-scale {
+    opacity: 0;
+    transform: scale(0.92);
+    filter: blur(12px);
+    transition: opacity 1.5s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 1.5s cubic-bezier(0.16, 1, 0.3, 1),
+                filter 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-scale.visible {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+}
