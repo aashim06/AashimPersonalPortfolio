@@ -16,8 +16,13 @@
     <link rel="stylesheet" href="css/animations.css">
 </head>
 <body class="theme-dark">
-    <!-- Ambient Noise Overlay (Premium touch) -->
+    <!-- Ambient Noise & Grid Overlays (Premium touch) -->
     <div class="noise-overlay"></div>
+    <div class="bg-grid"></div>
+    
+    <!-- Premium Interactive Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
     
     <!-- Background Elements -->
     <div class="bg-glow bg-glow-1"></div>
@@ -42,32 +47,26 @@
     <!-- Main Container -->
     <main>
         <!-- 1. Hero Section -->
-        <section id="hero" class="hero-section">
-            <div class="container hero-container grid-split">
-                <div class="hero-content">
-                    <p class="hero-overline hidden-reveal">Hello, my name is</p>
-                    <h1 class="hero-title hidden-reveal" style="transition-delay: 100ms;">
-                        Aashim Lal<br>
-                        <span class="text-gradient">Software Engineer.</span>
+        <section id="hero" class="hero-section hero-centered">
+            <div class="container hero-container">
+                <div class="hero-content text-center" style="position: relative;">
+                    <!-- Mesh glow element -->
+                    <div class="hero-mesh-bg"></div>
+                    
+                    <h1 class="hero-name" id="hero-title">
+                        Aashim Lal.
                     </h1>
-                    <p class="hero-subtitle hidden-reveal" style="transition-delay: 200ms;">
-                        A passionate Software Engineering graduate based in Melbourne. I specialize in building intelligent AI systems, robust backend architectures, and polished digital experiences.
+                    <p class="hero-role hidden-reveal" style="transition-delay: 100ms;">
+                        Software Engineer
                     </p>
-                    <div class="hero-actions hidden-reveal" style="transition-delay: 300ms;">
+                    <div class="hero-actions hidden-reveal" style="transition-delay: 200ms;">
                         <!-- Social links pushed via JS -->
-                    </div>
-                </div>
-                <div class="hero-visual hidden-reveal" style="transition-delay: 400ms;">
-                    <!-- Abstract geometric element -->
-                    <div class="abstract-shape">
-                        <div class="shape-ring"></div>
-                        <div class="shape-core"></div>
                     </div>
                 </div>
             </div>
             
-            <div class="scroll-indicator hidden-reveal" style="transition-delay: 600ms;">
-                <span class="scroll-text">Scroll</span>
+            <div class="scroll-indicator scroll-indicator-centered hidden-reveal" style="transition-delay: 400ms;">
+                <span class="scroll-text">Explore</span>
                 <div class="scroll-line"></div>
             </div>
         </section>
@@ -79,7 +78,7 @@
                     <h2 class="section-title">Professional Summary</h2>
                 </div>
                 <!-- Content injected via JS -->
-                <div id="summary-content" class="about-grid reveal-up"></div>
+                <div id="summary-content" class="reveal-up"></div>
             </div>
         </section>
 
@@ -90,9 +89,9 @@
                     <h2 class="section-title">Featured Projects</h2>
                     <p class="section-subtitle">Real-world systems & applications</p>
                 </div>
-                <div id="projects-container" class="projects-editorial">
-                    <!-- Injected via JS -->
-                </div>
+            </div>
+            <div id="projects-container" class="projects-slider-viewport reveal-up">
+                <!-- Injected via JS -->
             </div>
         </section>
 
@@ -130,7 +129,7 @@
                     <h2 class="section-title">About Me</h2>
                 </div>
                 <!-- Content injected via JS -->
-                <div id="about-content" class="about-grid reveal-up"></div>
+                <div id="about-content" class="reveal-up"></div>
             </div>
         </section>
 
