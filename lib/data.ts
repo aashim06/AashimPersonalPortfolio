@@ -141,7 +141,7 @@ export const data: PortfolioData = {
         },
         {
             company: "Barton Care Private Limited",
-            role: "Care Manager | Business Analyst",
+            role: "Community Care Manager | Business Analyst",
             period: "Dec 2022 – Mar 2026",
             points: [
                 "Managed operations including rostering, workforce coordination, and client service delivery.",
