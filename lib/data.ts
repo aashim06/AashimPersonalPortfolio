@@ -26,6 +26,7 @@ export interface Project {
     links: {
         github?: string;
         live?: string;
+        demo?: string;
     };
 }
 
