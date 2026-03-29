@@ -149,24 +149,25 @@ export default function ProjectsList({ projects }: { projects: Project[] }) {
                  position: "relative",
                  overflow: "hidden",
                  padding: "clamp(2.5rem, 4vw, 4.5rem)",
-                 background: `linear-gradient(145deg, rgba(${accent.color}, 0.12) 0%, rgba(255,255,255,0.05) 40%, rgba(255,255,255,0.02) 100%)`,
-                 border: `1px solid rgba(${accent.color}, 0.25)`,
+                 background: `linear-gradient(145deg, rgba(${accent.color}, 0.18) 0%, rgba(255,255,255,0.08) 40%, rgba(255,255,255,0.05) 100%)`,
+                 border: `1px solid rgba(${accent.color}, 0.35)`,
                  borderRadius: "28px",
                  display: "flex",
                  flexDirection: "column",
                  justifyContent: "center",
                  minHeight: "60vh",
-                 boxShadow: `0 20px 50px -20px rgba(0, 0, 0, 0.5), 0 0 30px -10px rgba(${accent.color}, 0.15)`,
+                 boxShadow: `0 25px 60px -15px rgba(0, 0, 0, 0.6), 0 0 40px -10px rgba(${accent.color}, 0.25)`,
+                 backdropFilter: "blur(10px)",
                }}
              >
-               {/* Subtle corner glow */}
+               {/* Intense corner glows */}
                <div style={{
                  position: "absolute",
-                 top: "-80px",
-                 right: "-80px",
-                 width: "300px",
-                 height: "300px",
-                 background: `radial-gradient(circle, rgba(${accent.color}, 0.15) 0%, transparent 70%)`,
+                 top: "-100px",
+                 right: "-100px",
+                 width: "400px",
+                 height: "400px",
+                 background: `radial-gradient(circle, rgba(${accent.color}, 0.2) 0%, transparent 70%)`,
                  pointerEvents: "none",
                  borderRadius: "50%"
                }} />
@@ -174,11 +175,11 @@ export default function ProjectsList({ projects }: { projects: Project[] }) {
                {/* Bottom-left soft glow */}
                <div style={{
                  position: "absolute",
-                 bottom: "-60px",
-                 left: "-60px",
-                 width: "250px",
-                 height: "250px",
-                 background: `radial-gradient(circle, rgba(${accent.color}, 0.1) 0%, transparent 70%)`,
+                 bottom: "-80px",
+                 left: "-80px",
+                 width: "350px",
+                 height: "350px",
+                 background: `radial-gradient(circle, rgba(${accent.color}, 0.12) 0%, transparent 70%)`,
                  pointerEvents: "none",
                  borderRadius: "50%"
                }} />
@@ -192,92 +193,98 @@ export default function ProjectsList({ projects }: { projects: Project[] }) {
                  marginBottom: "1.5rem",
                }}>
                  <span style={{
-                   fontSize: "0.8rem",
-                   fontWeight: 700,
+                   fontSize: "0.85rem",
+                   fontWeight: 800,
                    letterSpacing: "0.15em",
                    textTransform: "uppercase",
-                   color: `rgba(${accent.color}, 1)`,
-                   padding: "0.35rem 0.9rem",
-                   background: `rgba(${accent.color}, 0.12)`,
-                   border: `1px solid rgba(${accent.color}, 0.3)`,
-                   borderRadius: "100px"
+                   color: "#ffffff",
+                   padding: "0.4rem 1rem",
+                   background: `rgba(${accent.color}, 0.4)`,
+                   border: `1px solid rgba(${accent.color}, 0.5)`,
+                   borderRadius: "100px",
+                   boxShadow: `0 0 15px rgba(${accent.color}, 0.2)`
                  }}>
                    Project 0{idx + 1}
                  </span>
-                 <span style={{ fontSize: "0.95rem", color: "var(--text-primary)", fontWeight: 500, opacity: 0.9 }}>
+                 <span style={{ fontSize: "1rem", color: "#ffffff", fontWeight: 600, opacity: 1 }}>
                    {project.role}
                  </span>
                </div>
 
                {/* Title */}
                <h3 style={{ 
-                 fontSize: "clamp(2.2rem, 4vw, 3.2rem)", 
+                 fontSize: "clamp(2.5rem, 5vw, 3.5rem)", 
                  fontWeight: 800, 
                  color: "#ffffff", 
                  letterSpacing: "-1px", 
-                 marginBottom: "0.4rem",
-                 lineHeight: 1.15,
-                 position: "relative"
+                 marginBottom: "0.6rem",
+                 lineHeight: 1.1,
+                 position: "relative",
+                 textShadow: "0 2px 10px rgba(0,0,0,0.3)"
                }}>
                  {project.title}
                </h3>
                <p style={{ 
-                 fontSize: "1.2rem", 
-                 color: "rgba(255, 255, 255, 0.8)", 
-                 marginBottom: "2rem",
-                 fontWeight: 400
+                 fontSize: "1.25rem", 
+                 color: "#ffffff", 
+                 marginBottom: "2.5rem",
+                 fontWeight: 500,
+                 opacity: 0.95
                }}>
                  {project.subtitle}
                </p>
 
                {/* Description */}
                <div style={{
-                  fontSize: "1.1rem",
-                  lineHeight: 1.85,
-                  color: "rgba(255,255,255,0.85)",
+                  fontSize: "1.15rem",
+                  lineHeight: 1.8,
+                  color: "#ffffff",
                   textAlign: "justify",
                   hyphens: "auto",
-                  marginBottom: "1.8rem",
+                  marginBottom: "2rem",
                   maxWidth: "780px",
-                  position: "relative"
+                  position: "relative",
+                  opacity: 0.9
                }}>
                  <p>{project.description}</p>
                </div>
                
                {/* Impact callout */}
                <div style={{
-                 padding: "1.4rem 1.8rem",
-                 background: `rgba(${accent.color}, 0.08)`,
-                 borderLeft: `4px solid rgba(${accent.color}, 0.8)`,
-                 borderRadius: "0 16px 16px 0",
-                 marginBottom: "2.8rem",
-                 maxWidth: "780px",
-                 boxShadow: `inset 0 0 20px rgba(${accent.color}, 0.05)`
+                 padding: "1.5rem 2rem",
+                 background: `rgba(${accent.color}, 0.12)`,
+                 borderLeft: `5px solid rgba(${accent.color}, 1)`,
+                 borderRadius: "0 20px 20px 0",
+                 marginBottom: "3rem",
+                 maxWidth: "800px",
+                 boxShadow: `inset 0 0 30px rgba(${accent.color}, 0.1), 0 10px 20px -10px rgba(0,0,0,0.5)`
                }}>
                  <p style={{ 
-                   fontSize: "1.05rem", 
+                   fontSize: "1.1rem", 
                    lineHeight: 1.7,
                    color: "#ffffff",
-                   margin: 0
+                   margin: 0,
+                   fontWeight: 500
                  }}>
-                   <strong style={{ color: `rgba(${accent.color}, 1)`, textTransform: "uppercase", letterSpacing: "0.05em", fontSize: "0.9rem" }}>Impact — </strong>
+                   <strong style={{ color: `rgba(${accent.color}, 1)`, textTransform: "uppercase", letterSpacing: "0.08em", fontSize: "0.95rem", fontWeight: 800 }}>Impact — </strong>
                    {project.impact}
                  </p>
                </div>
                
                {/* Tech Stack */}
-               <div style={{ display: "flex", flexWrap: "wrap", gap: "0.7rem", marginBottom: "3rem" }}>
+               <div style={{ display: "flex", flexWrap: "wrap", gap: "0.8rem", marginBottom: "3.5rem" }}>
                   {project.stack.map(tech => (
                     <span key={tech} style={{ 
-                      fontSize: "0.85rem", 
-                      padding: "0.5rem 1.2rem", 
-                      background: "rgba(255,255,255,0.08)", 
-                      border: "1px solid rgba(255,255,255,0.15)",
+                      fontSize: "0.9rem", 
+                      padding: "0.5rem 1.4rem", 
+                      background: "rgba(255,255,255,0.12)", 
+                      border: "1px solid rgba(255,255,255,0.25)",
                       borderRadius: "100px",
                       color: "#ffffff",
                       textTransform: "uppercase",
-                      letterSpacing: "0.08em",
-                      fontWeight: 600
+                      letterSpacing: "0.1em",
+                      fontWeight: 700,
+                      boxShadow: "0 2px 5px rgba(0,0,0,0.2)"
                     }}>
                       {tech}
                     </span>
