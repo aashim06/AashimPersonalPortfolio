@@ -370,7 +370,7 @@ function initScrollAnimations() {
     }, 50);
 
     // Scroll reveal elements
-    document.querySelectorAll('.reveal-up').forEach(el => {
+    document.querySelectorAll('.reveal-up, .reveal-scale, .timeline-item').forEach(el => {
         observer.observe(el);
     });
     
