@@ -317,7 +317,9 @@ ul {
 
 .btn-primary:hover {
     transform: scale(1.02);
-    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.15);
+    box-shadow: 0 10px 40px rgba(255, 255, 255, 0.25);
+    background-color: #ffffff; /* Ensure pure white background */
+    color: #000000 !important; /* Force text to be black so it doesn't match background on hover */
 }
 
 .btn-secondary {
