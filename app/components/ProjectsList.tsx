@@ -142,232 +142,123 @@ export default function ProjectsList({ projects }: { projects: Project[] }) {
                key={idx}
                className="project-slide"
                style={{
-                 flex: "0 0 70vw",
-                 maxWidth: "900px",
+                 flex: "0 0 78vw",
+                 maxWidth: "1100px",
                  scrollSnapAlign: "start",
                  scrollSnapStop: "always",
                  position: "relative",
                  overflow: "hidden",
-                 padding: "clamp(2.5rem, 4vw, 4.5rem)",
+                 padding: "2.5rem 3rem",
                  background: `linear-gradient(145deg, rgba(${accent.color}, 0.18) 0%, rgba(255,255,255,0.08) 40%, rgba(255,255,255,0.05) 100%)`,
                  border: `1px solid rgba(${accent.color}, 0.35)`,
-                 borderRadius: "28px",
+                 borderRadius: "24px",
                  display: "flex",
                  flexDirection: "column",
                  justifyContent: "center",
-                 minHeight: "60vh",
-                 boxShadow: `0 25px 60px -15px rgba(0, 0, 0, 0.6), 0 0 40px -10px rgba(${accent.color}, 0.25)`,
+                 height: "360px",
+                 minHeight: "unset",
+                 boxShadow: `0 20px 50px -15px rgba(0,0,0,0.6), 0 0 35px -10px rgba(${accent.color}, 0.25)`,
                  backdropFilter: "blur(10px)",
                }}
              >
-               {/* Intense corner glows */}
-               <div style={{
-                 position: "absolute",
-                 top: "-100px",
-                 right: "-100px",
-                 width: "400px",
-                 height: "400px",
-                 background: `radial-gradient(circle, rgba(${accent.color}, 0.2) 0%, transparent 70%)`,
-                 pointerEvents: "none",
-                 borderRadius: "50%"
-               }} />
-               
-               {/* Bottom-left soft glow */}
-               <div style={{
-                 position: "absolute",
-                 bottom: "-80px",
-                 left: "-80px",
-                 width: "350px",
-                 height: "350px",
-                 background: `radial-gradient(circle, rgba(${accent.color}, 0.12) 0%, transparent 70%)`,
-                 pointerEvents: "none",
-                 borderRadius: "50%"
-               }} />
+           {/* Glow accents */}
+               <div style={{ position: "absolute", top: "-60px", right: "-60px", width: "300px", height: "300px", background: `radial-gradient(circle, rgba(${accent.color}, 0.18) 0%, transparent 70%)`, pointerEvents: "none", borderRadius: "50%" }} />
+               <div style={{ position: "absolute", bottom: "-50px", left: "-50px", width: "250px", height: "250px", background: `radial-gradient(circle, rgba(${accent.color}, 0.10) 0%, transparent 70%)`, pointerEvents: "none", borderRadius: "50%" }} />
 
-               {/* Number badge */}
-               <div style={{
-                 position: "relative",
-                 display: "inline-flex",
-                 alignItems: "center",
-                 gap: "1rem",
-                 marginBottom: "1.5rem",
-               }}>
-                 <span style={{
-                   fontSize: "0.85rem",
-                   fontWeight: 800,
-                   letterSpacing: "0.15em",
-                   textTransform: "uppercase",
-                   color: "#ffffff",
-                   padding: "0.4rem 1rem",
-                   background: `rgba(${accent.color}, 0.4)`,
-                   border: `1px solid rgba(${accent.color}, 0.5)`,
-                   borderRadius: "100px",
-                   boxShadow: `0 0 15px rgba(${accent.color}, 0.2)`
-                 }}>
-                   Project 0{idx + 1}
-                 </span>
-                 <span style={{ fontSize: "1rem", color: "#ffffff", fontWeight: 600, opacity: 1 }}>
-                   {project.role}
-                 </span>
-               </div>
+               {/* Two-column landscape layout */}
+               <div style={{ display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: "3rem", alignItems: "center", position: "relative", width: "100%" }}>
+                 
+                 {/* LEFT: Identity + Buttons */}
+                 <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%" }}>
+                   {/* Badge */}
+                   <div style={{ marginBottom: "1.2rem" }}>
+                     <span style={{
+                       fontSize: "0.75rem", fontWeight: 800, letterSpacing: "0.15em",
+                       textTransform: "uppercase", color: "#fff",
+                       padding: "0.3rem 0.9rem",
+                       background: `rgba(${accent.color}, 0.4)`,
+                       border: `1px solid rgba(${accent.color}, 0.5)`,
+                       borderRadius: "100px",
+                       boxShadow: `0 0 12px rgba(${accent.color}, 0.25)`
+                     }}>
+                       {idx + 1 < 10 ? `0${idx + 1}` : idx + 1}
+                     </span>
+                   </div>
 
-               {/* Title */}
-               <h3 style={{ 
-                 fontSize: "clamp(2.5rem, 5vw, 3.5rem)", 
-                 fontWeight: 800, 
-                 color: "#ffffff", 
-                 letterSpacing: "-1px", 
-                 marginBottom: "0.6rem",
-                 lineHeight: 1.1,
-                 position: "relative",
-                 textShadow: "0 2px 10px rgba(0,0,0,0.3)"
-               }}>
-                 {project.title}
-               </h3>
-               <p style={{ 
-                 fontSize: "1.25rem", 
-                 color: "#ffffff", 
-                 marginBottom: "2.5rem",
-                 fontWeight: 500,
-                 opacity: 0.95
-               }}>
-                 {project.subtitle}
-               </p>
+                   {/* Title */}
+                   <h3 style={{
+                     fontSize: "clamp(1.8rem, 3vw, 2.8rem)", fontWeight: 800, color: "#fff",
+                     letterSpacing: "-0.5px", lineHeight: 1.1, marginBottom: "0.5rem",
+                     textShadow: "0 2px 10px rgba(0,0,0,0.4)"
+                   }}>
+                     {project.title}
+                   </h3>
+                   <p style={{ fontSize: "0.95rem", color: `rgba(${accent.color}, 1)`, fontWeight: 600, marginBottom: "0.4rem", letterSpacing: "0.02em" }}>
+                     {project.subtitle}
+                   </p>
+                   <p style={{ fontSize: "0.85rem", color: "rgba(255,255,255,0.6)", marginBottom: "2rem", fontWeight: 500 }}>
+                     {project.role}
+                   </p>
 
-               {/* Description */}
-               <div style={{
-                  fontSize: "1.15rem",
-                  lineHeight: 1.8,
-                  color: "#ffffff",
-                  textAlign: "justify",
-                  hyphens: "auto",
-                  marginBottom: "2rem",
-                  maxWidth: "780px",
-                  position: "relative",
-                  opacity: 0.9
-               }}>
-                 <p>{project.description}</p>
-               </div>
-               
-               {/* Impact callout */}
-               <div style={{
-                 padding: "1.5rem 2rem",
-                 background: `rgba(${accent.color}, 0.12)`,
-                 borderLeft: `5px solid rgba(${accent.color}, 1)`,
-                 borderRadius: "0 20px 20px 0",
-                 marginBottom: "3rem",
-                 maxWidth: "800px",
-                 boxShadow: `inset 0 0 30px rgba(${accent.color}, 0.1), 0 10px 20px -10px rgba(0,0,0,0.5)`
-               }}>
-                 <p style={{ 
-                   fontSize: "1.1rem", 
-                   lineHeight: 1.7,
-                   color: "#ffffff",
-                   margin: 0,
-                   fontWeight: 500
-                 }}>
-                   <strong style={{ color: `rgba(${accent.color}, 1)`, textTransform: "uppercase", letterSpacing: "0.08em", fontSize: "0.95rem", fontWeight: 800 }}>Impact — </strong>
-                   {project.impact}
-                 </p>
-               </div>
-               
-               {/* Tech Stack */}
-               <div style={{ display: "flex", flexWrap: "wrap", gap: "0.8rem", marginBottom: "3.5rem" }}>
-                  {project.stack.map(tech => (
-                    <span key={tech} style={{ 
-                      fontSize: "0.9rem", 
-                      padding: "0.5rem 1.4rem", 
-                      background: "rgba(255,255,255,0.12)", 
-                      border: "1px solid rgba(255,255,255,0.25)",
-                      borderRadius: "100px",
-                      color: "#ffffff",
-                      textTransform: "uppercase",
-                      letterSpacing: "0.1em",
-                      fontWeight: 700,
-                      boxShadow: "0 2px 5px rgba(0,0,0,0.2)"
-                    }}>
-                      {tech}
-                    </span>
-                  ))}
-               </div>
+                   {/* Buttons */}
+                   <div style={{ display: "flex", flexWrap: "wrap", gap: "0.7rem" }}>
+                     {project.links.github && (
+                       <a href={project.links.github} target="_blank" rel="noreferrer"
+                         style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", padding: "0.6rem 1.4rem", background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.15)", borderRadius: "100px", color: "#fff", textDecoration: "none", fontSize: "0.85rem", fontWeight: 500, transition: "all 0.2s ease" }}
+                         onMouseOver={(e) => { e.currentTarget.style.background = "rgba(255,255,255,0.16)"; }}
+                         onMouseOut={(e) => { e.currentTarget.style.background = "rgba(255,255,255,0.08)"; }}
+                       ><GitHub size={15} /> Source</a>
+                     )}
+                     {project.links.demo && (
+                       <a href={project.links.demo} target="_blank" rel="noreferrer"
+                         style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", padding: "0.6rem 1.4rem", background: `rgba(${accent.color}, 0.2)`, border: `1px solid rgba(${accent.color}, 0.4)`, borderRadius: "100px", color: "#fff", textDecoration: "none", fontSize: "0.85rem", fontWeight: 600, transition: "all 0.2s ease" }}
+                         onMouseOver={(e) => { e.currentTarget.style.background = `rgba(${accent.color}, 0.35)`; }}
+                         onMouseOut={(e) => { e.currentTarget.style.background = `rgba(${accent.color}, 0.2)`; }}
+                       ><Play size={15} /> Demo</a>
+                     )}
+                     {project.links.live && (
+                       <a href={project.links.live} target="_blank" rel="noreferrer"
+                         style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", padding: "0.6rem 1.4rem", background: "transparent", border: "1px solid rgba(255,255,255,0.15)", borderRadius: "100px", color: "#fff", textDecoration: "none", fontSize: "0.85rem", fontWeight: 500, transition: "all 0.2s ease" }}
+                         onMouseOver={(e) => { e.currentTarget.style.background = "rgba(255,255,255,0.08)"; }}
+                         onMouseOut={(e) => { e.currentTarget.style.background = "transparent"; }}
+                       >Live <ArrowUpRight size={15} /></a>
+                     )}
+                   </div>
+                 </div>
 
-               {/* Action Buttons */}
-               <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem", marginTop: "auto", position: "relative" }}>
-                  {project.links.github && (
-                     <a 
-                       href={project.links.github} 
-                       target="_blank" 
-                       rel="noreferrer"
-                       style={{ 
-                         display: "inline-flex", 
-                         alignItems: "center", 
-                         gap: "0.6rem", 
-                         padding: "0.85rem 1.8rem", 
-                         background: "rgba(255,255,255,0.06)", 
-                         border: "1px solid rgba(255,255,255,0.12)",
-                         borderRadius: "100px",
-                         color: "var(--text-primary)",
-                         textDecoration: "none",
-                         fontSize: "0.9rem",
-                         fontWeight: 500,
-                         transition: "all 0.25s ease"
-                       }}
-                       onMouseOver={(e) => { e.currentTarget.style.background = "rgba(255,255,255,0.12)"; e.currentTarget.style.borderColor = "rgba(255,255,255,0.2)"; }}
-                       onMouseOut={(e) => { e.currentTarget.style.background = "rgba(255,255,255,0.06)"; e.currentTarget.style.borderColor = "rgba(255,255,255,0.12)"; }}
-                     >
-                       <GitHub size={17} /> Source Code
-                     </a>
-                  )}
-                  {project.links.demo && (
-                     <a 
-                       href={project.links.demo} 
-                       target="_blank" 
-                       rel="noreferrer"
-                       style={{ 
-                         display: "inline-flex", 
-                         alignItems: "center", 
-                         gap: "0.6rem", 
-                         padding: "0.85rem 1.8rem", 
-                         background: `rgba(${accent.color}, 0.15)`, 
-                         border: `1px solid rgba(${accent.color}, 0.3)`,
-                         color: "var(--text-primary)",
-                         borderRadius: "100px",
-                         textDecoration: "none",
-                         fontSize: "0.9rem",
-                         fontWeight: 600,
-                         transition: "all 0.25s ease"
-                       }}
-                       onMouseOver={(e) => { e.currentTarget.style.background = `rgba(${accent.color}, 0.25)`; }}
-                       onMouseOut={(e) => { e.currentTarget.style.background = `rgba(${accent.color}, 0.15)`; }}
-                     >
-                       <Play size={17} /> Watch Demo
-                     </a>
-                  )}
-                  {project.links.live && (
-                     <a 
-                       href={project.links.live} 
-                       target="_blank" 
-                       rel="noreferrer"
-                       style={{ 
-                         display: "inline-flex", 
-                         alignItems: "center", 
-                         gap: "0.6rem", 
-                         padding: "0.85rem 1.8rem", 
-                         background: "transparent", 
-                         border: "1px solid rgba(255,255,255,0.12)",
-                         borderRadius: "100px",
-                         color: "var(--text-primary)",
-                         textDecoration: "none",
-                         fontSize: "0.9rem",
-                         fontWeight: 500,
-                         transition: "all 0.25s ease"
-                       }}
-                       onMouseOver={(e) => { e.currentTarget.style.background = "rgba(255,255,255,0.06)"; }}
-                       onMouseOut={(e) => { e.currentTarget.style.background = "transparent"; }}
-                     >
-                       Visit Live <ArrowUpRight size={17} />
-                     </a>
-                  )}
+                 {/* RIGHT: Description + Impact + Stack */}
+                 <div>
+                   {/* Description */}
+                   <p style={{ fontSize: "0.95rem", lineHeight: 1.75, color: "rgba(255,255,255,0.85)", marginBottom: "1.2rem" }}>
+                     {project.description}
+                   </p>
+
+                   {/* Impact callout */}
+                   <div style={{
+                     padding: "0.9rem 1.2rem",
+                     background: `rgba(${accent.color}, 0.1)`,
+                     borderLeft: `4px solid rgba(${accent.color}, 1)`,
+                     borderRadius: "0 12px 12px 0",
+                     marginBottom: "1.5rem",
+                   }}>
+                     <p style={{ fontSize: "0.9rem", lineHeight: 1.65, color: "#ffffff", margin: 0, fontWeight: 500 }}>
+                       <strong style={{ color: `rgba(${accent.color}, 1)`, textTransform: "uppercase", letterSpacing: "0.08em", fontSize: "0.75rem", fontWeight: 800 }}>Impact — </strong>
+                       {project.impact}
+                     </p>
+                   </div>
+
+                   {/* Stack */}
+                   <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
+                     {project.stack.map(tech => (
+                       <span key={tech} style={{
+                         fontSize: "0.75rem", padding: "0.35rem 1rem",
+                         background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.18)",
+                         borderRadius: "100px", color: "#fff",
+                         textTransform: "uppercase", letterSpacing: "0.08em", fontWeight: 600
+                       }}>{tech}</span>
+                     ))}
+                   </div>
+                 </div>
                </div>
 
              </div>
