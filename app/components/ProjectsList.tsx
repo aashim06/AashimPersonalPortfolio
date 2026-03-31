@@ -129,7 +129,7 @@ export default function ProjectsList({ projects }: { projects: Project[] }) {
             overflowX: "auto", 
             scrollSnapType: "x mandatory", 
             scrollBehavior: "smooth",
-            gap: "2vw",
+            gap: "2.5vw",
             padding: "0 5vw 2rem 5vw",
             scrollbarWidth: "none",
             msOverflowStyle: "none"
@@ -142,9 +142,9 @@ export default function ProjectsList({ projects }: { projects: Project[] }) {
                key={idx}
                className="project-slide"
                style={{
-                 flex: "0 0 85vw",
-                 maxWidth: "1000px",
-                 scrollSnapAlign: "center",
+                 flex: "0 0 70vw",
+                 maxWidth: "900px",
+                 scrollSnapAlign: "start",
                  scrollSnapStop: "always",
                  position: "relative",
                  overflow: "hidden",

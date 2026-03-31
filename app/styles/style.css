@@ -599,14 +599,9 @@ ul {
     scroll-behavior: smooth;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
-    gap: 4vw;
-    padding: 0 7.5vw;
-}
-
-@media (min-width: 1412px) {
-    .projects-slider {
-        padding: 0 calc(50vw - 600px);
-    }
+    gap: 2.5vw;
+    padding: 0 5vw;
+    /* Key: no right padding so next card peeks at edge */
 }
 
 .projects-slider::-webkit-scrollbar {
@@ -614,21 +609,24 @@ ul {
 }
 
 .project-slide {
-    flex: 0 0 85vw;
-    max-width: 1200px;
+    flex: 0 0 70vw;
+    max-width: 900px;
     width: 100%;
     min-height: 80vh;
-    scroll-snap-align: center;
+    scroll-snap-align: start;
     scroll-snap-stop: always;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: var(--space-2xl) 0;
-    
-    /* No dimming — all slides are full brightness */
-    transition: transform var(--transition-normal);
     opacity: 1;
     transform: scale(1);
+}
+
+@media (max-width: 768px) {
+    .project-slide {
+        flex: 0 0 85vw;
+    }
 }
 
 .project-slide-content {
