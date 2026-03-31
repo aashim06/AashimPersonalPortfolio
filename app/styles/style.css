@@ -625,13 +625,8 @@ ul {
     justify-content: center;
     padding: var(--space-2xl) 0;
     
-    /* Premium Carousel Motion */
-    transition: opacity var(--transition-normal), transform var(--transition-normal);
-    opacity: 0.4;
-    transform: scale(0.95);
-}
-
-.project-slide.is-active {
+    /* No dimming — all slides are full brightness */
+    transition: transform var(--transition-normal);
     opacity: 1;
     transform: scale(1);
 }
