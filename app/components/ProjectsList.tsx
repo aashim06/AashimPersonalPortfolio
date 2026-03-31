@@ -130,7 +130,7 @@ export default function ProjectsList({ projects }: { projects: Project[] }) {
             scrollSnapType: "x mandatory", 
             scrollBehavior: "smooth",
             gap: "2.5vw",
-            padding: "0 5vw 2rem 5vw",
+            padding: "0 3vw 2rem 10vw",
             scrollbarWidth: "none",
             msOverflowStyle: "none"
           }}
@@ -142,7 +142,7 @@ export default function ProjectsList({ projects }: { projects: Project[] }) {
                key={idx}
                className="project-slide"
                style={{
-                 flex: "0 0 78vw",
+                 flex: "0 0 82vw",
                  maxWidth: "1100px",
                  scrollSnapAlign: "start",
                  scrollSnapStop: "always",
